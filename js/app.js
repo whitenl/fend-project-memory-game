@@ -16,8 +16,8 @@ const allCards = 	['fa-anchor', 'fa-anchor', 'fa-bicycle', 'fa-bicycle',
  *   - add each card's HTML to the page
  */
 
-//shuffle(allCards);
 
+//dynamically 
 function generateCard(card) {
 	return `<li class="card"><i class="fa ${card}"></i></li>` ;
 }
@@ -55,15 +55,26 @@ function shuffle(array) {
 
 //event listener to show card once it is clicked   --- thanks Mike! https://www.youtube.com/watch?v=_rUH-sEs68Y
 const cards = document.querySelectorAll('.card');
-const showCards = [];
+let showCards = [];
 let openCount = 0;
 
 cards.forEach(function(card) {
 	card.addEventListener('click', function(e) {
 		showCards.push(card);
 		card.classList.add('open','show');
-		openCount += 1;
-		console.log(openCount);
-	})
-})
+		
+		if (showCards.length == 2) {
+			setTimeout(function () {
+				showCards.forEach(function(card) {
+					card.classList.remove('open','show');
+				});
+
+				showCards = [];
+
+			}, 1000);
+
+			
+		}
+	});
+});
 
