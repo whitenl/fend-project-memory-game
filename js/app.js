@@ -2,6 +2,12 @@
  * Create a list that holds all of your cards
  */
 
+const allCards = 	['fa-anchor', 'fa-anchor', 'fa-bicycle', 'fa-bicycle', 
+					'fa-bolt', 'fa-bolt', 'fa-bomb', 'fa-bomb', 
+					'fa-cube', 'fa-cube', 'fa-diamond', 'fa-diamond', 
+					'fa-leaf', 'fa-leaf', 'fa-paper-plane-o', 'fa-paper-plane-o'];
+
+
 
 /*
  * Display the cards on the page
@@ -9,6 +15,14 @@
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+
+//shuffle(allCards);
+
+function generateCard(card) {
+	return `<li class="card"><i class="fa ${card}"></i></li>` ;
+}
+
+
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -37,14 +51,19 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
-//event listener to show card once it is clicked
+
+
+//event listener to show card once it is clicked   --- thanks Mike! https://www.youtube.com/watch?v=_rUH-sEs68Y
 const cards = document.querySelectorAll('.card');
 const showCards = [];
+let openCount = 0;
 
 cards.forEach(function(card) {
 	card.addEventListener('click', function(e) {
 		showCards.push(card);
 		card.classList.add('open','show');
-	});
-});
+		openCount += 1;
+		console.log(openCount);
+	})
+})
 
