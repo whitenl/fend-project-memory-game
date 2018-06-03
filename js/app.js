@@ -16,9 +16,9 @@ const allCards = 	['fa-anchor', 'fa-anchor', 'fa-bicycle', 'fa-bicycle',
  *   - add each card's HTML to the page
  */
 
-
-//dynamically 
+//dynamically generate cards
 function generateCard(card) {
+	console.log('generating card');
 	return `<li class="card"><i class="fa ${card}"></i></li>` ;
 }
 
@@ -53,23 +53,44 @@ function shuffle(array) {
 
 
 
+
+function initGame() {
+
+	startTimer();
+	let deck = document.querySelector('.deck');
+	var cardHTML = shuffle(allCards).map(function(card) {
+		return generateCard(card);
+	});
+
+	deck.innerHTML = cardHTML.join('');
+}
+
+initGame();
+
+
+
 //event listener to show card once it is clicked   --- thanks Mike! https://www.youtube.com/watch?v=_rUH-sEs68Y
 const cards = document.querySelectorAll('.card');
 let showCards = [];
 let openCount = 0;
+
+
+// need to do something to prevent clicking when showCards.length of 2 and only count clicks for cards that are not matched)
+
 
 cards.forEach(function(card) {
 	card.addEventListener('click', function(e) {
 		showCards.push(card);
 		card.classList.add('open','show');
 		
-		if (showCards.length == 2) {
+		if (showCards.length === 2) {
 			setTimeout(function () {
 				showCards.forEach(function(card) {
 					card.classList.remove('open','show');
+					console.log(showCards.length);
 				});
-
-				showCards = [];
+			showCards = [];
+			
 
 			}, 1000);
 
@@ -77,4 +98,29 @@ cards.forEach(function(card) {
 		}
 	});
 });
+
+
+// Timer that resets with restart button
+// ** TO DO ** 
+// Starts when first click occurs
+
+let timer = document.querySelector('.timer');
+let seconds = 0;
+let minutes = 0;
+function startTimer() {
+    let timeElapsed = window.setInterval(function () {
+          timer.innerHTML = minutes+" mins "+ seconds + " secs";
+            seconds++;
+            if(seconds==60){
+            	minutes++;
+            	seconds=0;
+            }
+        }, 1000);
+}
+  
+var resetTimer = function () {
+	timer.innerHTML = "0 mins 0 secs";
+  	clearInterval(timeElapsed);
+}
+
 
