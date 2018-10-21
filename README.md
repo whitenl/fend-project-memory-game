@@ -1,20 +1,32 @@
 # Memory Game Project
 
+Virtual memory game similar to the physical memory card game.
+
 ## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+* [How to play]
+* [Winning the game]
+* [Languages used]
+* [Winning the game]
+* [Dependencies]
 
-## Instructions
+## How to Play
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Click on a card and try to find the other matching card in the deck. 
 
-To get started, open `js/app.js` and start building out the app's functionality
+Clicking the reset button will end your current progress and start a new game.
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+## Winning the game
 
-## Contributing
+Find all 8 matching pairs in as few moves a possible.
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+## Languages used
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+HTML5
+CSS
+JavaScript
+
+## Dependencies
+
+Font Awesome
+Google Fonts

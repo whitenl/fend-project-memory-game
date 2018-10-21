@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matching Game</title>
     <meta name="description" content="">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -17,22 +18,37 @@
 
         <section class="score-panel">
         	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star first-star"></i></li>
+        		<li><i class="fa fa-star second-star"></i></li>
+        		<li><i class="fa fa-star third-star"></i></li>
         	</ul>
 
         	<span class="moves">3</span> Moves
             <span class="timer"></span>
 
             <div class="restart">
-        		<i class="fa fa-repeat"></i>
+        		<i class="fa fa-redo grow"></i>
         	</div>
         </section>
 
         <ul class="deck">
            
         </ul>
+       
+        <!-- Modal  -->
+        <div class="modal hide">
+      	
+	     	<div class='modal-content'>
+		        <h1>Winner winner chicken dinner!!</h1>
+		        <p>You earned a star rating of <span id='final-stars'></span></p>
+		        <p>You won in a total of <span id='final-moves'></span> moves</p>
+		        <p>You finished in <span id='final-time'></span></p>
+		        <p>Play again?</p>
+		        <button class='yes-please grow'>Yes please</button>
+		        <button class='no-thanks grow'>No thanks</button>
+	      	</div>
+    	</div>
+
     </div>
 
     <script src="js/app.js"></script>
