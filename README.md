@@ -2,13 +2,6 @@
 
 Virtual memory game similar to the physical memory card game.
 
-## Table of Contents
-
-* [How to play](##How to Play)
-* [Winning the game](##Winning the game)
-* [Languages used](##Languages used)
-* [Dependencies](##Dependencies)
-
 ## How to Play
 
 [Click here](https://whitenl.github.io/fend-project-memory-game/) to start a new game
